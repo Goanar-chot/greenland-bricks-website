@@ -1,0 +1,342 @@
+reated an aca<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Greenland Bricks & Polls Ltd</title>
+  <meta name="description" content="Quality Bricks and Strong Poles for all your construction needs. Trusted service in Kampala, Uganda.">
+  <meta name="keywords" content="bricks, poles, construction materials, Kampala, Uganda">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-green-700 text-white p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <img src="logo.png" alt="Greenland Logo" class="w-10 h-10 object-contain"/>
+      <h1 class="text-xl font-bold">Greenland Bricks & Polls Ltd</h1>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button id="lang-toggle" class="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-200">EN/LG</button>
+      <button id="dark-mode-toggle" class="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-200">🌙</button>
+      <button id="menu-btn" class="md:hidden">☰</button>
+    </div>
+    <ul id="menu" class="md:flex space-x-6 hidden">
+      <li><a href="#home" class="hover:underline">Home</a></li>
+      <li><a href="#about" class="hover:underline">About</a></li>
+      <li><a href="#products" class="hover:underline">Products</a></li>
+      <li><a href="#projects" class="hover:underline">Projects</a></li>
+      <li><a href="#testimonials" class="hover:underline">Testimonials</a></li>
+      <li><a href="#faq" class="hover:underline">FAQ</a></li>
+      <li><a href="#blog" class="hover:underline">Blog</a></li>
+      <li><a href="#careers" class="hover:underline">Careers</a></li>
+<a href="#team" class="hover:underline">Team</a></li>
+      <li><a href="#contact" class="hover:underline">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="p-4 bg-gray-100 flex justify-center">
+    <input type="text" id="search-input" placeholder="Search..." class="w-full max-w-md p-2 border rounded" />
+  </div>
+
+  <!-- Hero -->
+  <header id="home" class="bg-cover bg-center h-96 flex items-center justify-center text-white"
+    style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80')">
+    <div class="bg-black bg-opacity-50 p-6 rounded-xl text-center">
+      <h2 class="text-4xl font-bold">Building the Future, Brick by Brick</h2>
+      <p class="mt-4">Quality Bricks | Strong Poles | Trusted Service</p>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="p-10 text-center">
+    <h3 class="text-3xl font-bold mb-4">About Us</h3>
+    <p>
+      At Grandland Bricks & Polls Ltd, we specialize in manufacturing durable bricks
+      and strong fencing poles. Our mission is to provide high-quality building
+      materials that stand the test of time.
+    </p>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="p-10 bg-gray-100">
+    <h3 class="text-3xl font-bold text-center mb-8">Our Products</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <img src="Bricks2.JPG" alt="Bricks" class="rounded-lg mb-4"/>
+        <h4 class="font-bold text-xl">Bricks</h4>
+        <p>Strong, durable, and eco-friendly bricks for all construction projects.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <img src="Polls2.JPG" alt="Poles" class="rounded-lg mb-4"/>
+        <h4 class="font-bold text-xl">Poles</h4>
+        <p>Reliable fencing poles to secure your property with strength.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <img src="Bricks1.JPG"Custom Materials" class="rounded-lg mb-4"/>
+        <h4 class="font-bold text-xl">Custom Orders</h4>
+        <p>We manufacture custom-sized materials tailored to your projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="p-10 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-8">Our Gallery</h3>
+    <div class="grid md:grid-cols-4 gap-4">
+      <img src="Bricks2.JPG" alt="Brick Sample" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+      <img src="Polls2.JPG" alt="Pole Sample" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+      <img src="Bricks1.JPG" alt="Custom Material" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" alt="Construction Site" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+    </div>
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full">
+      <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="p-10">
+    <h3 class="text-3xl font-bold text-center mb-8">Our Amazing Team</h3>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
+        <img src="Goanar.JPG" alt="Goanar Chot" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+        <h4 class="font-bold text-xl">Goanar Chot</h4>
+        <p class="text-gray-600">CEO</p>
+        <p class="description hidden">Goanar Chot is the visionary CEO of Grandland Bricks & Polls Ltd, with over 20 years of experience in the construction industry. He leads the company with a focus on innovation and sustainability.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
+        <img src="Freddy.JPG" alt="Freddy" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+        <h4 class="font-bold text-xl">Freddy</h4>
+        <p class="text-gray-600">Senior Director</p>
+        <p class="description hidden">Freddy serves as Senior Director, overseeing operations and strategic planning. With a background in business management, he ensures the company's growth and efficiency.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
+        <img src="Emma.JPG" alt="Emma" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+        <h4 class="font-bold text-xl">Emma</h4>
+        <p class="text-gray-600">Senior Cyber Security Analyst</p>
+        <p class="description hidden">Emma is our Senior Cyber Security Analyst, responsible for safeguarding our digital assets. She implements advanced security measures to protect against cyber threats.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
+        <img src="Monica.jpg" alt="Monica Freddy" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+        <h4 class="font-bold text-xl">Monica Freddy</h4>
+        <p class="text-gray-600">Head of HR</p>
+        <p class="description hidden">Monica Freddy heads our Human Resources department, fostering a positive work environment and managing talent acquisition and development.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
+        <img src="Arrielah.PNG" alt="Arrielah" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+        <h4 class="font-bold text-xl">Arrielah</h4>
+        <p class="text-gray-600">Junior Full Stack Developer</p>
+        <p class="description hidden">Arrielah  is our Junior Full Stack Developer, skilled in both front-end and back-end technologies. She builds and maintains our web applications with creativity and precision.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Projects -->
+  <section id="projects" class="p-10 bg-gray-100">
+    <h3 class="text-3xl font-bold text-center mb-8">Our Projects</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h4 class="font-bold text-xl mb-2">Sustainable Brick Manufacturing</h4>
+        <p>Developed eco-friendly bricks using recycled materials to reduce environmental impact.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h4 class="font-bold text-xl mb-2">Smart Fencing Solutions</h4>
+        <p>Implemented IoT-enabled fencing poles for enhanced security and monitoring.</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h4 class="font-bold text-xl mb-2">Custom Construction Materials</h4>
+        <p>Created tailored building materials to meet unique architectural requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="p-10 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-8">Customer Testimonials</h3>
+    <div class="max-w-4xl mx-auto space-y-6">
+      <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700">
+        "Grandland Bricks & Polls Ltd provided excellent service and high-quality materials. Our project was completed on time and within budget."
+        <footer class="mt-2 font-bold">- Spice Diana</footer>
+      </blockquote>
+      <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700">
+        "The custom orders team was very responsive and delivered exactly what we needed. Highly recommend!"
+        <footer class="mt-2 font-bold">- Radio and Weasel</footer>
+      </blockquote>
+      <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700">
+        "Reliable products and great customer support. We will definitely work with Grandland again."
+        <footer class="mt-2 font-bold">- Dr Jose Chameleon</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="p-10 bg-gray-100">
+    <h3 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h3>
+    <div class="max-w-4xl mx-auto space-y-4">
+      <details class="border rounded p-4">
+        <summary class="font-semibold cursor-pointer">What materials do you use for your bricks?</summary>
+        <p class="mt-2 text-gray-700">We use high-quality clay and eco-friendly materials to manufacture our bricks.</p>
+      </details>
+      <details class="border rounded p-4">
+        <summary class="font-semibold cursor-pointer">Do you offer custom sizes?</summary>
+        <p class="mt-2 text-gray-700">Yes, we manufacture custom-sized bricks and poles tailored to your project needs.</p>
+      </details>
+      <details class="border rounded p-4">
+        <summary class="font-semibold cursor-pointer">What is the delivery time?</summary>
+        <p class="mt-2 text-gray-700">Delivery times vary depending on order size and location, typically within 2-4 weeks.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="p-10 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-8">Latest News & Articles</h3>
+    <div class="max-w-4xl mx-auto space-y-6">
+      <article class="border rounded p-4">
+        <h4 class="font-bold text-xl mb-2">Innovations in Brick Manufacturing</h4>
+        <p>Discover how new technologies are improving the quality and sustainability of bricks.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+      <article class="border rounded p-4">
+        <h4 class="font-bold text-xl mb-2">Tips for Secure Fencing</h4>
+        <p>Learn the best practices for installing and maintaining fencing poles for maximum security.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+      <article class="border rounded p-4">
+        <h4 class="font-bold text-xl mb-2">Custom Orders: What You Need to Know</h4>
+        <p>Everything you should consider when placing custom orders for construction materials.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Careers -->
+  <section id="careers" class="p-10 bg-gray-100">
+    <h3 class="text-3xl font-bold text-center mb-8">Careers</h3>
+    <div class="max-w-4xl mx-auto space-y-6">
+      <div class="border rounded p-4">
+        <h4 class="font-bold text-xl mb-2">Construction Project Manager</h4>
+        <p>We are looking for an experienced project manager to lead our construction projects.</p>
+        <button onclick="showApplicationForm('Construction Project Manager')" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">Apply Now</button>
+      </div>
+      <div class="border rounded p-4">
+        <h4 class="font-bold text-xl mb-2">Sales Representative</h4>
+        <p>Join our sales team to help grow our customer base and market presence.</p>
+        <button onclick="showApplicationForm('Sales Representative')" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">Apply Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form Modal -->
+  <div id="application-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+      <h4 class="text-2xl font-bold mb-4">Apply for <span id="job-title"></span></h4>
+      <form id="application-form" action="https://formspree.io/f/mkgveyvy" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="position" id="position-input">
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Full Name</label>
+          <input type="text" name="name" class="w-full p-2 border rounded" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Email</label>
+          <input type="email" name="email" class="w-full p-2 border rounded" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Phone</label>
+          <input type="tel" name="phone" class="w-full p-2 border rounded" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Cover Letter</label>
+          <textarea name="cover_letter" rows="4" class="w-full p-2 border rounded" required></textarea>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Resume/CV</label>
+          <input type="file" name="resume" accept=".pdf,.doc,.docx" class="w-full p-2 border rounded" required>
+        </div>
+        <div class="flex justify-end space-x-4">
+          <button type="button" onclick="hideApplicationForm()" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">Cancel</button>
+          <button type="submit" class="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-800">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Contact -->
+  <section id="contact" class="p-10 bg-green-700 text-white text-center">
+    <h3 class="text-3xl font-bold mb-4">Contact Us</h3>
+    <p>📞 +256 764-930-227 | ✉️ info@greenlandbricks.com</p>
+    <p class="mt-2">📍 Kampala, Uganda</p>
+    <form id="contact-form" class="mt-6 max-w-md mx-auto">
+      <input type="text" placeholder="Your Name" class="w-full p-2 mb-2 rounded" required>
+      <input type="email" placeholder="Your Email" class="w-full p-2 mb-2 rounded" required>
+      <textarea placeholder="Your Message" class="w-full p-2 mb-2 rounded" rows="4" required></textarea>
+      <button type="submit" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Send Message</button>
+    </form>
+    <div id="map" class="mt-6">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757!2d32.5825!3d0.3476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb8b0b0b0b0b%3A0x0!2zMC4zNDc2!5e0!3m2!1sen!2sug!4v1234567890!5m2!1sen!2sug" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white p-4 text-center">
+    <div class="newsletter mb-4">
+      <h4 class="text-lg font-bold mb-2">Subscribe to Our Newsletter</h4>
+      <form id="newsletter-form" class="flex justify-center">
+        <input type="email" placeholder="Enter your email" class="p-2 rounded-l" required>
+        <button type="submit" class="bg-green-700 px-4 py-2 rounded-r hover:bg-green-800">Subscribe</button>
+      </form>
+    </div>
+    <div class="social-payment flex justify-center space-x-8 mb-4">
+      <div class="social-icons flex space-x-4">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1-3 3-3h2v3h-2c-.5 0-1 .5-1 1v1h3l-1 3h-2v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-5 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="hover:text-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M22 5.9a8.3 8.3 0 0 1-2.4.7 4.2 4.2 0 0 0 1.8-2.3 8.3 8.3 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.7 11.7 11.7 0 0 1-8.5-4.3 4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5v.1a4.1 4.1 0 0 0 3.3 4 4.2 4.2 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8 8.3 8.3 0 0 1-5.1 1.8A8.5 8.5 0 0 1 2 18.1a11.7 11.7 0 0 0 6.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5a8.3 8.3 0 0 0 2-2.1z"/></svg>
+        </a>
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok" class="hover:text-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M9 2v7a5 5 0 0 0 5 5h3v3a7 7 0 0 1-7-7V2z"/></svg>
+        </a>
+        <a href="mailto:info@grandlandbricks.com" aria-label="Email" class="hover:text-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M2 6v12h20V6H2zm10 7L4 8h16l-8 5z"/></svg>
+        </a>
+      </div>
+      <div class="payment-icons flex space-x-4">
+        <img src="applepay.png" alt="Apple Pay" class="w-8 h-8"/>
+        <img src="applepay.png" alt="Apple Pay" class="w-8 h-8"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="w-8 h-8"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" class="w-8 h-8"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="w-8 h-8"/>
+      </div>
+    </div>
+    <p>© <span id="year"></span> Greenland Bricks & Polls Ltd. All rights reserved.</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-4 right-4 bg-green-700 text-white p-3 rounded-full shadow-lg hidden hover:bg-green-800 transition">
+    ↑
+  </button>
+
+  <script src="script.js"></script>
+  <!-- Live Chat Widget (Tidio) -->
+  <script src="//code.tidio.co/abcdefghijklmnop1234567890.js" async></script>
+</body>
+</html>

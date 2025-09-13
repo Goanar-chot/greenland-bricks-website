@@ -1,0 +1,92 @@
+/* Custom styles (optional overrides) */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Team member descriptions */
+.description {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.team-member:hover .description {
+  display: block;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 0; }
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.dark-mode .bg-white {
+  background-color: #2d3748;
+  color: #e2e8f0;
+}
+
+.dark-mode .text-gray-600 {
+  color: #a0aec0;
+}
+
+.dark-mode .bg-gray-100 {
+  background-color: #4a5568;
+}
+
+.dark-mode .bg-gray-900 {
+  background-color: #1a202c;
+}
+
+/* Lightbox */
+#lightbox {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Social and payment icons */
+.social-payment {
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+
+.social-icons a svg,
+.payment-icons img {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.social-icons a:hover svg,
+.payment-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Product description toggle */
+.product-description {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.product-card.active .product-description {
+  display: block;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Grandland Bricks & Polls Ltd",
+  "short_name": "Grandland",
+  "description": "Quality Bricks and Strong Poles for construction",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#22c55e",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
