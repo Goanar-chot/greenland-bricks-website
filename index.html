@@ -21,28 +21,49 @@
 <body class="font-sans text-gray-800">
 
   <!-- Navbar -->
-  <nav class="bg-green-700 text-white p-4 flex justify-between items-center">
+  <nav id="main-nav" class="bg-green-700 text-white p-4 flex justify-between items-center">
     <div class="flex items-center space-x-3">
       <img src="logo.png" alt="Greenland Logo" class="w-10 h-10 object-contain"/>
       <h1 class="text-xl font-bold">Greenland Bricks & Polls Ltd</h1>
     </div>
-    <div class="flex items-center space-x-4">
-      <button id="lang-toggle" class="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-200">EN/LG</button>
+    <div class="flex items-center space-x-4 relative">
+
       <button id="dark-mode-toggle" class="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-200">🌙</button>
       <button id="menu-btn" class="md:hidden">☰</button>
+
+      <ul id="menu" class="md:flex space-x-6 hidden">
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#home" class="hover:underline">Home</a></li>
+        <li><a href="#products" class="hover:underline">Products</a></li>
+        <li><a href="#projects" class="hover:underline">Projects</a></li>
+        <li><a href="#testimonials" class="hover:underline">Testimonials</a></li>
+        <li><a href="#faq" class="hover:underline">FAQ</a></li>
+        <li><a href="#blog" class="hover:underline">Blog</a></li>
+        <li><a href="#careers" class="hover:underline">Careers</a></li>
+        <li><a href="#team" class="hover:underline">Team</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+
+      <!-- Cart Icon -->
+      <button id="cart-toggle" class="relative ml-4 bg-white text-green-700 p-2 rounded hover:bg-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m5-9l2 9" />
+        </svg>
+        <span id="cart-count" class="absolute top-0 right-0 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+      </button>
+
+      <!-- Cart Dropdown -->
+      <div id="cart-dropdown" class="absolute right-0 mt-2 w-80 bg-white border border-gray-300 rounded shadow-lg p-4 hidden z-50 max-h-96 overflow-y-auto">
+        <h4 class="font-bold text-lg mb-4">Your Cart</h4>
+        <div id="cart-dropdown-items" class="space-y-3">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+        <div id="cart-dropdown-total" class="mt-4 font-bold text-right">
+      Total: <span id="cart-dropdown-total-amount">0</span>
+        </div>
+        <button id="cart-dropdown-checkout" class="mt-4 w-full bg-green-700 text-white py-2 rounded hover:bg-green-800 disabled:opacity-50" disabled>Proceed to Checkout</button>
+      </div>
     </div>
-    <ul id="menu" class="md:flex space-x-6 hidden">
-      <li><a href="#home" class="hover:underline">Home</a></li>
-      <li><a href="#about" class="hover:underline">About</a></li>
-      <li><a href="#products" class="hover:underline">Products</a></li>
-      <li><a href="#projects" class="hover:underline">Projects</a></li>
-      <li><a href="#testimonials" class="hover:underline">Testimonials</a></li>
-      <li><a href="#faq" class="hover:underline">FAQ</a></li>
-      <li><a href="#blog" class="hover:underline">Blog</a></li>
-      <li><a href="#careers" class="hover:underline">Careers</a></li>
-      <li><a href="#team" class="hover:underline">Team</a></li>
-      <li><a href="#contact" class="hover:underline">Contact</a></li>
-    </ul>
   </nav>
 
   <!-- Search Bar -->
@@ -63,31 +84,84 @@
   <section id="about" class="p-10 text-center">
     <h3 class="text-3xl font-bold mb-4">About Us</h3>
     <p>
-      At Grandland Bricks & Polls Ltd, we specialize in manufacturing durable bricks
-      and strong fencing poles. Our mission is to provide high-quality building
-      materials that stand the test of time.
+      Grandland Bricks & Polls Ltd is a family-owned business specializing in manufacturing quality bricks and producing sturdy fence poles. With years of experience, we serve builders, contractors, and homeowners with dependable products and timely delivery.
     </p>
+    <ul class="list-disc list-inside mt-4 text-left max-w-xl mx-auto">
+      <li>Local manufacturing for consistent supply</li>
+      <li>Custom orders and color options</li>
+      <li>Delivery and site support for large builds</li>
+    </ul>
   </section>
 
   <!-- Products -->
   <section id="products" class="p-10 bg-gray-100">
     <h3 class="text-3xl font-bold text-center mb-8">Our Products</h3>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow-md p-4">
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="bricks" data-name="Bricks" data-price="5000">
         <img src="Bricks2.JPG" alt="Bricks" class="rounded-lg mb-4"/>
         <h4 class="font-bold text-xl">Bricks</h4>
         <p>Strong, durable, and eco-friendly bricks for all construction projects.</p>
+        <p class="text-green-700 font-bold mt-2">UGX 5,000 / USD 1.25 per unit</p>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-bricks" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-bricks" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button onclick="event.stopPropagation(); addToCart('bricks')" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full">Add to Cart</button>
       </div>
-      <div class="bg-white rounded-xl shadow-md p-4">
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="poles" data-name="Poles" data-price="15000">
         <img src="Polls2.JPG" alt="Poles" class="rounded-lg mb-4"/>
         <h4 class="font-bold text-xl">Poles</h4>
         <p>Reliable fencing poles to secure your property with strength.</p>
+        <p class="text-green-700 font-bold mt-2">UGX 15,000 / USD 3.75 per unit</p>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-poles" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-poles" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button onclick="event.stopPropagation(); addToCart('poles')" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full">Add to Cart</button>
       </div>
-      <div class="bg-white rounded-xl shadow-md p-4">
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="custom" data-name="Custom Orders" data-price="0">
         <img src="Bricks1.JPG" alt="Custom Materials" class="rounded-lg mb-4"/>
         <h4 class="font-bold text-xl">Custom Orders</h4>
         <p>We manufacture custom-sized materials tailored to your projects.</p>
+        <p class="text-green-700 font-bold mt-2">Price on request</p>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-custom" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-custom" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button onclick="event.stopPropagation(); addToCart('custom')" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full">Add to Cart</button>
       </div>
+    </div>
+  </section>
+
+  <!-- Cart -->
+  <section id="cart" class="p-10 bg-white">
+    <h3 class="text-3xl font-bold text-center mb-8">Your Cart</h3>
+    <div id="cart-items" class="max-w-4xl mx-auto space-y-4">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <div id="cart-total" class="max-w-4xl mx-auto mt-6 text-right text-xl font-bold hidden">
+      Total: UGX <span id="total-amount">0</span>
+    </div>
+    <div id="payment-section" class="max-w-4xl mx-auto mt-6 hidden">
+      <h4 class="text-xl font-bold mb-4">Select Payment Method</h4>
+      <div class="grid md:grid-cols-3 gap-4">
+        <label class="payment-option border rounded p-4 cursor-pointer hover:bg-gray-100">
+          <input type="radio" name="payment" value="mobile-money" class="mr-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Mobile Money" class="w-8 h-8 inline mr-2">
+          Mobile Money (MTN/Airtel)
+        </label>
+        <label class="payment-option border rounded p-4 cursor-pointer hover:bg-gray-100">
+          <input type="radio" name="payment" value="card" class="mr-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Card" class="w-8 h-8 inline mr-2">
+          Credit/Debit Card
+        </label>
+        <label class="payment-option border rounded p-4 cursor-pointer hover:bg-gray-100">
+          <input type="radio" name="payment" value="paypal" class="mr-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="w-8 h-8 inline mr-2">
+          PayPal
+        </label>
+      </div>
+      <button id="checkout-btn" class="mt-6 bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 disabled:opacity-50" disabled>Proceed to Checkout</button>
     </div>
   </section>
 
