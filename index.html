@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+mov <!DOCTYPE html>
 <html lang="en">
   <head>
   <meta charset="UTF-8" />
@@ -215,11 +215,29 @@
   <!-- Gallery -->
   <section id="gallery" class="p-10 bg-white">
     <h3 class="text-3xl font-bold text-center mb-8">Our Gallery</h3>
-    <div class="grid md:grid-cols-4 gap-4">
-      <img src="Bricks2.JPG" alt="Brick Sample" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
-      <img src="Polls2.JPG" alt="Pole Sample" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
-      <img src="Bricks1.JPG" alt="Custom Material" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" alt="Construction Site" class="rounded-lg cursor-pointer hover:opacity-75" onclick="openLightbox(this.src)">
+    <div id="gallery-carousel" class="carousel relative overflow-hidden max-w-5xl mx-auto">
+      <div class="carousel-track flex transition-transform duration-300 ease-in-out">
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('Bricks2.JPG')">
+          <img src="Bricks2.JPG" alt="Brick Sample" class="w-full h-64 object-cover">
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('Polls2.JPG')">
+          <img src="Polls2.JPG" alt="Pole Sample" class="w-full h-64 object-cover">
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('Bricks1.JPG')">
+          <img src="Bricks1.JPG" alt="Custom Material" class="w-full h-64 object-cover">
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80')">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" alt="Construction Site" class="w-full h-64 object-cover">
+        </div>
+      </div>
+      <button class="carousel-button carousel-button--left absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full shadow hover:bg-green-800 disabled:opacity-50" aria-label="Previous Slide"><</button>
+      <button class="carousel-button carousel-button--right absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full shadow hover:bg-green-800 disabled:opacity-50" aria-label="Next Slide">></button>
+      <div class="carousel-nav flex justify-center mt-4 space-x-2">
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-green-700 current-slide" aria-label="Slide 1"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 2"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 3"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 4"></button>
+      </div>
     </div>
     <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
       <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full">
@@ -230,36 +248,47 @@
   <!-- Team -->
   <section id="team" class="p-10">
     <h3 class="text-3xl font-bold text-center mb-8">Our Amazing Team</h3>
-    <div class="grid md:grid-cols-3 gap-6 text-center">
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
-        <img src="Goanar.JPG" alt="Goanar Chot" class="w-24 h-24 rounded-full mx-auto mb-4"/>
+    <div class="team-hierarchy max-w-4xl mx-auto">
+      <div class="team-member level-1 text-center mb-8">
+        <img src="Goanar.JPG" alt="Goanar Chot" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
         <h4 class="font-bold text-xl">Goanar Chot</h4>
         <p class="text-gray-600">CEO</p>
-        <p class="description hidden">Goanar Chot is the visionary CEO of Grandland Bricks & Polls Ltd, with over 20 years of experience in the construction industry. He leads the company with a focus on innovation and sustainability.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
-        <img src="Freddy.JPG" alt="Freddy" class="w-24 h-24 rounded-full mx-auto mb-4"/>
-        <h4 class="font-bold text-xl">Freddy</h4>
-        <p class="text-gray-600">Senior Director</p>
-        <p class="description hidden">Freddy serves as Senior Director, overseeing operations and strategic planning. With a background in business management, he ensures the company's growth and efficiency.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
-        <img src="Emma.JPG" alt="Emma" class="w-24 h-24 rounded-full mx-auto mb-4"/>
-        <h4 class="font-bold text-xl">Emma</h4>
-        <p class="text-gray-600">Senior Cyber Security Analyst</p>
-        <p class="description hidden">Emma is our Senior Cyber Security Analyst, responsible for safeguarding our digital assets. She implements advanced security measures to protect against cyber threats.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
-        <img src="Monica.jpg" alt="Monica Freddy" class="w-24 h-24 rounded-full mx-auto mb-4"/>
-        <h4 class="font-bold text-xl">Monica Freddy</h4>
-        <p class="text-gray-600">Head of HR</p>
-        <p class="description hidden">Monica Freddy heads our Human Resources department, fostering a positive work environment and managing talent acquisition and development.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition team-member">
-        <img src="Arrielah.PNG" alt="Arrielah" class="w-24 h-24 rounded-full mx-auto mb-4"/>
-        <h4 class="font-bold text-xl">Arrielah</h4>
-        <p class="text-gray-600">Junior Full Stack Developer</p>
-        <p class="description hidden">Arrielah  is our Junior Full Stack Developer, skilled in both front-end and back-end technologies. She builds and maintains our web applications with creativity and precision.</p>
+        <p class="description hidden">CEO with over 20 years of leadership experience driving company growth and innovation.</p>
+        <ul class="reports flex justify-center space-x-8 mt-6">
+          <li class="team-member level-2 text-center cursor-pointer">
+            <img src="Freddy.JPG" alt="Freddy" class="w-20 h-20 rounded-full mx-auto mb-2 object-cover">
+            <h5 class="font-semibold">Freddy</h5>
+            <p class="text-gray-600">Senior Director</p>
+            <p class="description hidden">Senior Director overseeing multiple departments and strategic initiatives.</p>
+            <ul class="reports mt-4 space-y-1">
+              <li class="text-sm team-member cursor-pointer">Oliver <p class="description hidden">Junior developer assisting with tasks.</p></li>
+              <li class="text-sm team-member cursor-pointer">Ava <p class="description hidden">Design specialist for UI/UX.</p></li>
+              <li class="text-sm team-member cursor-pointer">Noah <p class="description hidden">QA tester ensuring quality.</p></li>
+            </ul>
+          </li>
+          <li class="team-member level-2 text-center cursor-pointer">
+            <img src="Emma.JPG" alt="Emma" class="w-20 h-20 rounded-full mx-auto mb-2 object-cover">
+            <h5 class="font-semibold">Emma</h5>
+            <p class="text-gray-600">Senior Cybersecurity Engineer</p>
+            <p class="description hidden">Senior Cybersecurity Engineer responsible for protecting company assets and data.</p>
+            <ul class="reports mt-4 space-y-1">
+              <li class="text-sm team-member cursor-pointer">Arrielah <p class="description hidden">Content creator for social media.</p></li>
+              <li class="text-sm team-member cursor-pointer">Sophia <p class="description hidden">Event coordinator.</p></li>
+              <li class="text-sm team-member cursor-pointer">Liam <p class="description hidden">Data analyst for campaigns.</p></li>
+            </ul>
+          </li>
+          <li class="team-member level-2 text-center cursor-pointer">
+            <img src="Monica.jpg" alt="Monica" class="w-20 h-20 rounded-full mx-auto mb-2 object-cover">
+            <h5 class="font-semibold">Monica</h5>
+            <p class="text-gray-600">HR Director</p>
+            <p class="description hidden">HR Director managing recruitment, employee relations, and organizational culture.</p>
+            <ul class="reports mt-4 space-y-1">
+              <li class="text-sm team-member cursor-pointer">Isabella <p class="description hidden">Sales representative.</p></li>
+              <li class="text-sm team-member cursor-pointer">Mason <p class="description hidden">Business analyst.</p></li>
+              <li class="text-sm team-member cursor-pointer">Harper <p class="description hidden">Customer support lead.</p></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -457,9 +486,26 @@
   <button id="chat-toggle" class="fixed bottom-4 right-16 bg-green-700 text-white p-3 rounded-full shadow-lg hover:bg-green-800 transition">
     💬
   </button>
-  <div id="chat-window" class="fixed bottom-16 right-4 w-80 h-96 bg-white border border-gray-300 rounded-lg shadow-lg hidden flex flex-col z-50">
-    <div class="bg-green-700 text-white p-3 rounded-t-lg flex justify-between items-center">
-      <span class="font-bold">Chat with Us</span>
+    <div id="chat-window" class="fixed bottom-16 right-4 w-80 h-96 bg-white border border-gray-300 rounded-lg shadow-lg hidden flex flex-col z-50">
+      <div class="bg-green-700 text-white p-3 rounded-t-lg flex justify-between items-center">
+        <span class="font-bold">Chat with Us</span>
+        <button id="chat-close" class="text-white hover:text-gray-200">×</button>
+      </div>
+      <div id="chat-messages" class="flex-1 p-3 overflow-y-auto">
+        <!-- Messages will be added here -->
+      </div>
+      <div class="p-3 border-t">
+        <input type="text" id="chat-input" placeholder="Type your message..." class="w-full p-2 border rounded">
+        <button id="chat-send" class="mt-2 w-full bg-green-700 text-white p-2 rounded hover:bg-green-800">Send</button>
+      </div>
+    </div>
+
+    <!-- Removed duplicate script.js load to fix duplicate declaration error -->
+    <!-- <script src="script.js"></script> -->
+    <!-- Live Chat Widget (Tidio) -->
+    <script src="//code.tidio.co/abcdefghijklmnop1234567890.js" async></script>
+  </body>
+</html>
       <button id="chat-close" class="text-white hover:text-gray-200">×</button>
     </div>
     <div id="chat-messages" class="flex-1 p-3 overflow-y-auto">

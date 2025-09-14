@@ -3,16 +3,137 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Hide content sections by default */
+section > div, section > p, section > ul, section > form {
+  display: none;
+  background: rgba(255, 255, 255, 0.9);
+  /* Removed blur */
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Show content on hover or focus of section header */
+section:hover > div,
+section:hover > p,
+section:hover > ul,
+section:hover > form,
+section:focus-within > div,
+section:focus-within > p,
+section:focus-within > ul,
+section:focus-within > form {
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
 /* Team member descriptions */
 .description {
   display: none;
   margin-top: 10px;
   font-size: 0.9em;
   color: #555;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: opacity 0.3s ease;
 }
 
 .team-member:hover .description {
   display: block;
+}
+
+/* Reports section for team hierarchy */
+.reports {
+  margin-top: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.reports::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 2px;
+  height: 100%;
+  background-color: #4ade80; /* green-400 */
+}
+
+.reports .team-member {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  cursor: default;
+  position: relative;
+  padding-top: 20px;
+}
+
+.reports .team-member::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background-color: #4ade80; /* green-400 */
+}
+
+.reports .team-member img {
+  width: 80px;
+  height: 80px;
+}
+
+.reports .team-member h5,
+.reports .team-member h6 {
+  margin-top: 0.25rem;
+}
+
+.reports .team-member p {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Cursor pointer for clickable team members */
+.team-member.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Team node styles for circular hierarchy */
+.team-node {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.team-node:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+#team-graph {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+#team-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Animations */
@@ -83,8 +204,30 @@ body {
 .product-description {
   display: none;
   margin-top: 10px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #555;
+}
+
+.product-card {
+  max-width: 280px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
 }
 
 .product-card.active .product-description {
@@ -223,4 +366,44 @@ body {
 .chat-message.bot .message {
   background-color: #f1f0f0;
   color: #000;
+}
+
+/* Footer accordion for mobile */
+.footer-column ul {
+  display: none;
+}
+
+.footer-column.open ul {
+  display: block;
+}
+
+.footer-column-title {
+  cursor: pointer;
+  user-select: none;
+}
+
+.footer-column-title:hover {
+  color: #4ade80;
+}
+
+/* Gallery */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+#gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#gallery img:hover {
+  opacity: 0.75;
+  outline: none !important;
+  box-shadow: none !important;
 }
