@@ -358,10 +358,7 @@ section:focus-within > form {
   word-wrap: break-word;
 }
 
-.chat-message.user .message {
-  background-color: #dcf8c6;
-  color: #000;
-}
+
 
 .chat-message.bot .message {
   background-color: #f1f0f0;
