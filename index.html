@@ -44,6 +44,8 @@ mov <!DOCTYPE html>
         <li><a href="#careers" class="hover:underline">Careers</a></li>
         <li><a href="#team" class="hover:underline">Team</a></li>
         <li><a href="#contact" class="hover:underline">Contact</a></li>
+        <li><button id="login-btn" class="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-200">Login</button></li>
+        <li><button id="track-order-btn" class="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-200">Track Order</button></li>
         <li><a href="tel:+256764930227" class="hover:underline">Call Us</a></li>
       </ul>
 
@@ -99,6 +101,32 @@ mov <!DOCTYPE html>
   <!-- Products -->
   <section id="products" class="p-10 bg-gray-100">
     <h3 class="text-3xl font-bold text-center mb-8">Our Products</h3>
+    <div class="flex justify-center mb-6">
+      <button class="filter-btn bg-green-700 text-white px-4 py-2 rounded mr-2 hover:bg-green-800" data-filter="all">All</button>
+      <button class="filter-btn bg-gray-300 text-gray-700 px-4 py-2 rounded mr-2 hover:bg-gray-400" data-filter="bricks">Bricks</button>
+      <button class="filter-btn bg-gray-300 text-gray-700 px-4 py-2 rounded mr-2 hover:bg-gray-400" data-filter="poles">Poles</button>
+      <button class="filter-btn bg-gray-300 text-gray-700 px-4 py-2 rounded mr-2 hover:bg-gray-400" data-filter="pavers">Pavers</button>
+      <button class="filter-btn bg-gray-300 text-gray-700 px-4 py-2 rounded mr-2 hover:bg-gray-400" data-filter="culverts">Culverts</button>
+    </div>
+    <div class="flex justify-center mb-6">
+      <label for="min-price" class="mr-2">Min Price:</label>
+      <input type="number" id="min-price" placeholder="0" class="w-20 p-2 border rounded mr-4">
+      <label for="max-price" class="mr-2">Max Price:</label>
+      <input type="number" id="max-price" placeholder="10000" class="w-20 p-2 border rounded mr-4">
+      <button id="apply-price-filter" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 mr-4">Apply Price Filter</button>
+      <label for="sort-select" class="mr-2">Sort by:</label>
+      <select id="sort-select" class="p-2 border rounded">
+        <option value="name">Name</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="popularity">Popularity</option>
+      </select>
+      <select id="sort-by" class="p-2 border rounded">
+        <option value="name">Name</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+      </select>
+    </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="small-polls" data-name="Small Polls" data-price="10">
         <img src="Polls.JPG" alt="Small Polls" class="rounded-lg mb-4 w-full h-48 object-cover"/>
@@ -414,19 +442,34 @@ mov <!DOCTYPE html>
   <!-- Testimonials -->
   <section id="testimonials" class="p-10 bg-white">
     <h3 class="text-3xl font-bold text-center mb-8">Customer Testimonials</h3>
-    <div class="max-w-4xl mx-auto space-y-6">
-      <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700">
-        "Grandland Bricks & Polls Ltd provided excellent service and high-quality materials. Our project was completed on time and within budget."
-        <footer class="mt-2 font-bold">- Spice Diana</footer>
-      </blockquote>
-      <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700">
-        "The custom orders team was very responsive and delivered exactly what we needed. Highly recommend!"
-        <footer class="mt-2 font-bold">- Radio and Weasel</footer>
-      </blockquote>
-      <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700">
-        "Reliable products and great customer support. We will definitely work with Grandland again."
-        <footer class="mt-2 font-bold">-Dr Jose Chameleon</footer>
-      </blockquote>
+    <div id="testimonials-carousel" class="carousel relative overflow-hidden max-w-4xl mx-auto">
+      <div class="carousel-track flex transition-transform duration-300 ease-in-out">
+        <div class="carousel-slide flex-shrink-0 w-full px-4">
+          <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700 text-center">
+            "Grandland Bricks & Polls Ltd provided excellent service and high-quality materials. Our project was completed on time and within budget."
+            <footer class="mt-2 font-bold">- Spice Diana</footer>
+          </blockquote>
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-full px-4">
+          <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700 text-center">
+            "The custom orders team was very responsive and delivered exactly what we needed. Highly recommend!"
+            <footer class="mt-2 font-bold">- Radio and Weasel</footer>
+          </blockquote>
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-full px-4">
+          <blockquote class="border-l-4 border-green-700 pl-4 italic text-gray-700 text-center">
+            "Reliable products and great customer support. We will definitely work with Grandland again."
+            <footer class="mt-2 font-bold">-Dr Jose Chameleon</footer>
+          </blockquote>
+        </div>
+      </div>
+      <button class="carousel-button carousel-button--left absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full shadow hover:bg-green-800 disabled:opacity-50" aria-label="Previous Testimonial"><</button>
+      <button class="carousel-button carousel-button--right absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full shadow hover:bg-green-800 disabled:opacity-50" aria-label="Next Testimonial">></button>
+      <div class="carousel-nav flex justify-center mt-4 space-x-2">
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-green-700 current-slide" aria-label="Testimonial 1"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Testimonial 2"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Testimonial 3"></button>
+      </div>
     </div>
   </section>
 
@@ -452,24 +495,105 @@ mov <!DOCTYPE html>
   <!-- Blog -->
   <section id="blog" class="p-10 bg-white">
     <h3 class="text-3xl font-bold text-center mb-8">Latest News & Articles</h3>
-    <div class="max-w-4xl mx-auto space-y-6">
-      <article class="border rounded p-4">
+    <div class="flex justify-center mb-6">
+      <input type="text" id="blog-search" placeholder="Search articles..." class="w-full max-w-md p-2 border rounded">
+    </div>
+    <div id="blog-posts" class="max-w-4xl mx-auto space-y-6">
+      <article class="border rounded p-4 blog-post" data-tags="bricks, manufacturing, technology">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Bricks</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Manufacturing</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Technology</span>
+        </div>
         <h4 class="font-bold text-xl mb-2">Innovations in Brick Manufacturing</h4>
         <p>Discover how new technologies are improving the quality and sustainability of bricks.</p>
         <a href="#" class="text-green-700 hover:underline">Read more</a>
       </article>
-      <article class="border rounded p-4">
+      <article class="border rounded p-4 blog-post" data-tags="poles, fencing, security">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Poles</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Fencing</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Security</span>
+        </div>
         <h4 class="font-bold text-xl mb-2">Tips for Secure Fencing</h4>
         <p>Learn the best practices for installing and maintaining fencing poles for maximum security.</p>
         <a href="#" class="text-green-700 hover:underline">Read more</a>
       </article>
-      <article class="border rounded p-4">
+      <article class="border rounded p-4 blog-post" data-tags="custom, orders, service">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Custom</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Orders</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Service</span>
+        </div>
         <h4 class="font-bold text-xl mb-2">Custom Orders: What You Need to Know</h4>
         <p>Everything you should consider when placing custom orders for construction materials.</p>
         <a href="#" class="text-green-700 hover:underline">Read more</a>
       </article>
+      <article class="border rounded p-4 blog-post" data-tags="sustainable, eco-friendly, construction">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Sustainable</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Eco-friendly</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Construction</span>
+        </div>
+        <h4 class="font-bold text-xl mb-2">Sustainable Construction Materials</h4>
+        <p>Exploring eco-friendly options for building materials in Uganda.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+      <article class="border rounded p-4 blog-post" data-tags="bricks, maintenance, tips">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Bricks</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Maintenance</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Tips</span>
+        </div>
+        <h4 class="font-bold text-xl mb-2">Maintenance Tips for Bricks</h4>
+        <p>How to maintain your brick structures for longevity.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+      <article class="border rounded p-4 blog-post" data-tags="poles, selection, guide">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Poles</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Selection</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Guide</span>
+        </div>
+        <h4 class="font-bold text-xl mb-2">Choosing the Right Poles</h4>
+        <p>A guide to selecting the best fencing poles for your needs.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+      <article class="border rounded p-4 blog-post" data-tags="construction, trends, kampala">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Construction</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Trends</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Kampala</span>
+        </div>
+        <h4 class="font-bold text-xl mb-2">Construction Trends in Kampala</h4>
+        <p>Latest trends in construction materials and techniques in Uganda.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+      <article class="border rounded p-4 blog-post" data-tags="quality, control, manufacturing">
+        <div class="mb-2">
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Quality</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Control</span>
+          <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Manufacturing</span>
+        </div>
+        <h4 class="font-bold text-xl mb-2">Quality Control in Manufacturing</h4>
+        <p>How we ensure the highest quality in our products.</p>
+        <a href="#" class="text-green-700 hover:underline">Read more</a>
+      </article>
+    </div>
+    <div id="blog-pagination" class="flex justify-center mt-8 space-x-2">
+      <!-- Pagination buttons will be added here -->
     </div>
   </section>
+
+  <!-- Blog Post Modal -->
+  <div id="blog-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-4xl w-full mx-4 max-h-screen overflow-y-auto">
+      <button id="blog-modal-close" class="float-right text-gray-600 hover:text-gray-800">&times;</button>
+      <div id="blog-modal-content">
+        <!-- Blog post content will be loaded here -->
+      </div>
+    </div>
+  </div>
 
   <!-- Careers -->
   <section id="careers" class="p-10 bg-gray-100">
@@ -528,16 +652,58 @@ mov <!DOCTYPE html>
     <h3 class="text-3xl font-bold mb-4">Contact Us</h3>
     <p>📞 +256 764-930-227 | ✉️ info@greenlandbricks.com</p>
     <p class="mt-2">📍 Kampala, Uganda</p>
-    <form id="contact-form" class="mt-6 max-w-md mx-auto">
-      <input type="text" placeholder="Your Name" class="w-full p-2 mb-2 rounded" required>
-      <input type="email" placeholder="Your Email" class="w-full p-2 mb-2 rounded" required>
-      <textarea placeholder="Your Message" class="w-full p-2 mb-2 rounded" rows="4" required></textarea>
-      <button type="submit" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Send Message</button>
+    <form id="contact-form" class="mt-6 max-w-md mx-auto" action="https://formspree.io/f/mkgveyvy" method="POST">
+      <input type="text" name="honeypot" style="display:none;" autocomplete="off">
+      <div class="mb-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded" required>
+        <span class="error-message text-red-500 text-sm hidden" id="name-error">Name is required</span>
+      </div>
+      <div class="mb-4">
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded" required>
+        <span class="error-message text-red-500 text-sm hidden" id="email-error">Please enter a valid email</span>
+      </div>
+      <div class="mb-4">
+        <textarea name="message" placeholder="Your Message" class="w-full p-2 border rounded" rows="4" required></textarea>
+        <span class="error-message text-red-500 text-sm hidden" id="message-error">Message is required</span>
+      </div>
+      <button type="submit" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200" id="contact-submit-btn">Send Message</button>
+      <div id="contact-success" class="mt-2 text-green-600 hidden">Thank you! Your message has been sent.</div>
+      <div id="contact-error" class="mt-2 text-red-600 hidden">There was an error sending your message. Please try again.</div>
     </form>
     <div id="map" class="mt-6">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757!2d32.5825!3d0.3476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb8b0b0b0b0b%3A0x0!2zMC4zNDc2!5e0!3m2!1sen!2sug!4v1234567890!5m2!1sen!2sug" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
+
+  <!-- User Authentication Modal -->
+  <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full mx-4">
+      <button id="auth-modal-close" class="float-right text-gray-600 hover:text-gray-800">&times;</button>
+      <div id="auth-content">
+        <!-- Login/Signup forms will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- User Dashboard Modal -->
+  <div id="dashboard-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-4xl w-full mx-4 max-h-screen overflow-y-auto">
+      <button id="dashboard-modal-close" class="float-right text-gray-600 hover:text-gray-800">&times;</button>
+      <div id="dashboard-content">
+        <!-- Dashboard content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Tracking Modal -->
+  <div id="tracking-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full mx-4">
+      <button id="tracking-modal-close" class="float-right text-gray-600 hover:text-gray-800">&times;</button>
+      <div id="tracking-content">
+        <!-- Tracking content will be loaded here -->
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white p-4 text-center">
