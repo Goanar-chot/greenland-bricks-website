@@ -404,3 +404,13 @@ if ('serviceWorker' in navigator) {
       .catch(error => console.log('SW registration failed'));
   });
 }
+
+// Calculate and display years in business
+const foundingDate = new Date(2022, 0, 1); // January 1, 2022
+const now = new Date();
+let years = now.getFullYear() - foundingDate.getFullYear();
+const monthDiff = now.getMonth() - foundingDate.getMonth();
+if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < foundingDate.getDate())) {
+  years--;
+}
+document.getElementById('years-in-business').textContent = years;
