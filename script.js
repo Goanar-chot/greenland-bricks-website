@@ -62,8 +62,45 @@ document.querySelectorAll('section > h3, section > h4, section > h5').forEach(he
 // Toggle product description display on click
 document.querySelectorAll('.product-card').forEach(card => {
   card.addEventListener('click', () => {
-    card.classList.toggle('active');
+    // Toggle the product-details div visibility
+    const details = card.querySelector('.product-details');
+    if (details.style.display === 'block') {
+      details.style.display = 'none';
+    } else {
+      details.style.display = 'block';
+    }
   });
+});
+
+// Add to Cart button event listeners for new products
+document.getElementById('add-to-cart-small-polls').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('quantity-small-polls').value, 10) || 1;
+  addToCart('small-polls', 'Small Polls', 10, qty);
+});
+
+document.getElementById('add-to-cart-long-polls-angle').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('quantity-long-polls-angle').value, 10) || 1;
+  addToCart('long-polls-angle', 'Long Polls with Angle', 2500, qty);
+});
+
+document.getElementById('add-to-cart-6-inch-bricks').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('quantity-6-inch-bricks').value, 10) || 1;
+  addToCart('6-inch-bricks', '6 Inch Bricks', 2000, qty);
+});
+
+document.getElementById('add-to-cart-4-inch-bricks').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('quantity-4-inch-bricks').value, 10) || 1;
+  addToCart('4-inch-bricks', '4 Inch Bricks', 1700, qty);
+});
+
+document.getElementById('add-to-cart-pavers').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('quantity-pavers').value, 10) || 1;
+  addToCart('pavers', 'Pavers', 700, qty);
+});
+
+document.getElementById('add-to-cart-medium-calvert').addEventListener('click', () => {
+  const qty = parseInt(document.getElementById('quantity-medium-calvert').value, 10) || 1;
+  addToCart('medium-calvert', 'Medium Calvert', 850, qty);
 });
 
 // Contact form submission
@@ -205,6 +242,12 @@ function loadCart() {
   cart = storedCart ? JSON.parse(storedCart) : [];
 }
 
+function updateCartCount() {
+  const cartCount = document.getElementById('cart-count');
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartCount.textContent = totalQuantity;
+}
+
 function renderCart() {
   loadCart();
   const cartItemsContainer = document.getElementById('cart-items');
@@ -215,6 +258,7 @@ function renderCart() {
   if (cart.length === 0) {
     cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
     cartTotal.parentElement.classList.add('hidden');
+    updateCartCount();
     return;
   }
 
@@ -245,6 +289,7 @@ function renderCart() {
 
   cartTotal.textContent = total.toLocaleString();
   cartTotal.parentElement.classList.remove('hidden');
+  updateCartCount();
 }
 
 function renderCartDropdown() {
@@ -259,6 +304,7 @@ function renderCartDropdown() {
     dropdownItems.innerHTML = '<p>Your cart is empty.</p>';
     checkoutBtn.disabled = true;
     dropdownTotal.textContent = '0';
+    updateCartCount();
     return;
   }
 
@@ -289,6 +335,7 @@ function renderCartDropdown() {
 
   dropdownTotal.textContent = total.toLocaleString();
   checkoutBtn.disabled = false;
+  updateCartCount();
 }
 
 function addToCart(id, name, price, quantity) {
@@ -329,6 +376,25 @@ document.getElementById('add-to-cart-custom').addEventListener('click', () => {
 // Initialize cart on page load
 renderCart();
 renderCartDropdown();
+
+  
+// Payment method selection handling
+document.querySelectorAll('input[name="payment"]').forEach(radio => {
+  radio.addEventListener('change', (e) => {
+    const cardInfoForm = document.getElementById('card-info-form');
+    const momoQrContainer = document.getElementById('momo-qr-container');
+    if (e.target.value === 'visa') {
+      cardInfoForm.classList.remove('hidden');
+      momoQrContainer.classList.add('hidden');
+    } else if (e.target.value === 'mobile-money') {
+      cardInfoForm.classList.add('hidden');
+      momoQrContainer.classList.remove('hidden');
+    } else {
+      cardInfoForm.classList.add('hidden');
+      momoQrContainer.classList.add('hidden');
+    }
+  });
+});
 
 // Register service worker for PWA
 if ('serviceWorker' in navigator) {

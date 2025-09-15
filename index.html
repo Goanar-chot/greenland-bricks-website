@@ -99,45 +99,84 @@ mov <!DOCTYPE html>
   <!-- Products -->
   <section id="products" class="p-10 bg-gray-100">
     <h3 class="text-3xl font-bold text-center mb-8">Our Products</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="bricks" data-name="Bricks" data-price="5000" data-onsale="true" data-sale-price="4000">
-        <img src="Bricks2.JPG" alt="Bricks" class="rounded-lg mb-4"/>
-        <h4 class="font-bold text-xl">Bricks <span class="onsale-badge bg-red-600 text-white text-xs font-bold px-2 py-1 rounded ml-2">On Sale</span></h4>
-        <p>Strong, durable, and eco-friendly bricks for all construction projects.</p>
-        <p class="text-green-700 font-bold mt-2">
-          <span class="line-through text-red-600">UGX 5,000</span>
-          <span class="ml-2">UGX 4,000 / USD 1.00 per unit</span>
-        </p>
-        <div class="mt-4 flex items-center justify-between">
-          <label for="quantity-bricks" class="text-sm">Quantity:</label>
-          <input type="number" id="quantity-bricks" min="1" value="1" class="w-16 p-1 border rounded">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="small-polls" data-name="Small Polls" data-price="10">
+        <img src="Polls.JPG" alt="Small Polls" class="rounded-lg mb-4 w-full h-48 object-cover"/>
+        <h4 class="font-bold text-xl">Small Polls</h4>
+        <div class="product-details mt-2" style="display: none;">
+          <p class="text-sm text-gray-600">Small poles for light fencing needs.</p>
+          <p class="text-green-700 font-bold">UGX 10 each</p>
         </div>
-        <button id="add-to-cart-bricks" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-small-polls" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-small-polls" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button id="add-to-cart-small-polls" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
       </div>
-      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="poles" data-name="Poles" data-price="15000" data-onsale="true" data-sale-price="12000">
-        <img src="Polls2.JPG" alt="Poles" class="rounded-lg mb-4"/>
-        <h4 class="font-bold text-xl">Poles <span class="onsale-badge bg-red-600 text-white text-xs font-bold px-2 py-1 rounded ml-2">On Sale</span></h4>
-        <p>Reliable fencing poles to secure your property with strength.</p>
-        <p class="text-green-700 font-bold mt-2">
-          <span class="line-through text-red-600">UGX 15,000</span>
-          <span class="ml-2">UGX 12,000 / USD 3.00 per unit</span>
-        </p>
-        <div class="mt-4 flex items-center justify-between">
-          <label for="quantity-poles" class="text-sm">Quantity:</label>
-          <input type="number" id="quantity-poles" min="1" value="1" class="w-16 p-1 border rounded">
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="long-polls-angle" data-name="Long Polls with Angle" data-price="2500">
+        <img src="Polls.JPG" alt="Long Polls with Angle" class="rounded-lg mb-4 w-full h-48 object-cover"/>
+        <h4 class="font-bold text-xl">Long Polls with Angle</h4>
+        <div class="product-details mt-2" style="display: none;">
+          <p class="text-sm text-gray-600">Long poles with angle for sturdy fencing.</p>
+          <p class="text-green-700 font-bold">UGX 2,500 each</p>
         </div>
-        <button id="add-to-cart-poles" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-long-polls-angle" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-long-polls-angle" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button id="add-to-cart-long-polls-angle" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
       </div>
-      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="custom" data-name="Custom Orders" data-price="0">
-        <img src="Bricks1.JPG" alt="Custom Materials" class="rounded-lg mb-4"/>
-        <h4 class="font-bold text-xl">Custom Orders</h4>
-        <p>We manufacture custom-sized materials tailored to your projects.</p>
-        <p class="text-green-700 font-bold mt-2">Price on request</p>
-        <div class="mt-4 flex items-center justify-between">
-          <label for="quantity-custom" class="text-sm">Quantity:</label>
-          <input type="number" id="quantity-custom" min="1" value="1" class="w-16 p-1 border rounded">
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="6-inch-bricks" data-name="6 Inch Bricks" data-price="2000">
+        <img src="Short Bricks.JPG" alt="6 Inch Bricks" class="rounded-lg mb-4 w-full h-48 object-cover"/>
+        <h4 class="font-bold text-xl">6 Inch Bricks</h4>
+        <div class="product-details mt-2" style="display: none;">
+          <p class="text-sm text-gray-600">6-inch bricks for standard construction.</p>
+          <p class="text-green-700 font-bold">UGX 2,000 each</p>
         </div>
-        <button id="add-to-cart-custom" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-6-inch-bricks" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-6-inch-bricks" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button id="add-to-cart-6-inch-bricks" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="4-inch-bricks" data-name="4 Inch Bricks" data-price="1700">
+        <img src="4 inch breaks.JPG" alt="4 Inch Bricks" class="rounded-lg mb-4 w-full h-48 object-cover"/>
+        <h4 class="font-bold text-xl">4 Inch Bricks</h4>
+        <div class="product-details mt-2" style="display: none;">
+          <p class="text-sm text-gray-600">4-inch bricks for lightweight builds.</p>
+          <p class="text-green-700 font-bold">UGX 1,700 each</p>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-4-inch-bricks" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-4-inch-bricks" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button id="add-to-cart-4-inch-bricks" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="pavers" data-name="Pavers" data-price="700">
+        <img src="Pavers.JPG" alt="Pavers" class="rounded-lg mb-4 w-full h-48 object-cover"/>
+        <h4 class="font-bold text-xl">Pavers</h4>
+        <div class="product-details mt-2" style="display: none;">
+          <p class="text-sm text-gray-600">Pavers for pathways and driveways.</p>
+          <p class="text-green-700 font-bold">UGX 700 each</p>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-pavers" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-pavers" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button id="add-to-cart-pavers" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4 product-card" data-id="medium-calvert" data-name="Medium Calvert" data-price="850">
+        <img src="Medium Calvert .jpg" alt="Medium Calvert" class="rounded-lg mb-4 w-full h-48 object-cover"/>
+        <h4 class="font-bold text-xl">Medium Calvert</h4>
+        <div class="product-details mt-2" style="display: none;">
+          <p class="text-sm text-gray-600">Medium culverts for drainage.</p>
+          <p class="text-green-700 font-bold">UGX 850 each</p>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <label for="quantity-medium-calvert" class="text-sm">Quantity:</label>
+          <input type="number" id="quantity-medium-calvert" min="1" value="1" class="w-16 p-1 border rounded">
+        </div>
+        <button id="add-to-cart-medium-calvert" class="mt-2 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full" type="button">Add to Cart</button>
       </div>
     </div>
   </section>
@@ -229,6 +268,18 @@ mov <!DOCTYPE html>
         <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80')">
           <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=80" alt="Construction Site" class="w-full h-64 object-cover">
         </div>
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('4 inch breaks.JPG')">
+          <img src="4 inch breaks.JPG" alt="4 Inch Bricks" class="w-full h-64 object-cover">
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('Pavers2.JPG')">
+          <img src="Pavers2.JPG" alt="Pavers Sample" class="w-full h-64 object-cover">
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('Medium Calvert .jpg')">
+          <img src="Medium Calvert .jpg" alt="Medium Calvert" class="w-full h-64 object-cover">
+        </div>
+        <div class="carousel-slide flex-shrink-0 w-64 mx-2 rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox('Short Bricks.JPG')">
+          <img src="Short Bricks.JPG" alt="Short Bricks" class="w-full h-64 object-cover">
+        </div>
       </div>
       <button class="carousel-button carousel-button--left absolute top-1/2 left-2 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full shadow hover:bg-green-800 disabled:opacity-50" aria-label="Previous Slide"><</button>
       <button class="carousel-button carousel-button--right absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-700 text-white p-2 rounded-full shadow hover:bg-green-800 disabled:opacity-50" aria-label="Next Slide">></button>
@@ -237,6 +288,10 @@ mov <!DOCTYPE html>
         <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 2"></button>
         <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 3"></button>
         <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 4"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 5"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 6"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 7"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-400" aria-label="Slide 8"></button>
       </div>
     </div>
     <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">

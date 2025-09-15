@@ -46,6 +46,28 @@ section:focus-within > form {
   transition: opacity 0.3s ease;
 }
 
+/* Responsive fixes for team section */
+@media (max-width: 768px) {
+  .team-hierarchy {
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+  .reports {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .reports .team-member {
+    display: block !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+  }
+  .reports .team-member img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
 .team-member:hover .description {
   display: block;
 }
@@ -383,24 +405,4 @@ section:focus-within > form {
   color: #4ade80;
 }
 
-/* Gallery */
-#gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
 
-#gallery img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-#gallery img:hover {
-  opacity: 0.75;
-  outline: none !important;
-  box-shadow: none !important;
-}

@@ -76,4 +76,10 @@ class Carousel {
 
 document.addEventListener('DOMContentLoaded', () => {
   const galleryCarousel = new Carousel('#gallery-carousel', {});
+
+  window.addEventListener('load', () => {
+    galleryCarousel.slideWidth = galleryCarousel.slides[0].getBoundingClientRect().width;
+    galleryCarousel.setSlidePositions();
+    galleryCarousel.moveToSlide(galleryCarousel.currentIndex);
+  });
 });
