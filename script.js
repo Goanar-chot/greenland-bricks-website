@@ -27,19 +27,87 @@ function hideAllDescriptions() {
   document.querySelectorAll('.description').forEach(desc => desc.classList.add('hidden'));
 }
 
-// Add click listeners to toggle descriptions for Freddy, Emma, Monica
-['Freddy', 'Emma', 'Monica'].forEach(name => {
-  const member = document.querySelector(`.team-member img[alt="${name}"]`);
-  if (member) {
-    member.style.cursor = 'pointer';
-    member.addEventListener('click', () => {
-      const desc = member.parentElement.querySelector('.description');
-      if (desc) {
-        desc.classList.toggle('hidden');
-      }
-    });
-  }
-});
+// Removed separate description toggling for Freddy, Emma, Monica as it will be handled with social links
+
+// Add hover and click listeners for Goanar Chot's profile
+const goanarProfile = document.getElementById('goanar-profile');
+const goanarSocialLinks = document.getElementById('goanar-social-links');
+const goanarDesc = document.querySelector('#goanar-profile .description');
+
+if (goanarProfile && goanarSocialLinks && goanarDesc) {
+  goanarProfile.addEventListener('mouseenter', () => {
+    goanarSocialLinks.classList.remove('hidden');
+    goanarDesc.classList.remove('hidden');
+  });
+  goanarProfile.addEventListener('mouseleave', () => {
+    goanarSocialLinks.classList.add('hidden');
+    goanarDesc.classList.add('hidden');
+  });
+  goanarProfile.addEventListener('click', () => {
+    goanarSocialLinks.classList.toggle('hidden');
+    goanarDesc.classList.toggle('hidden');
+  });
+}
+
+// Add hover and click listeners for Freddy's profile
+const freddyProfile = document.getElementById('freddy-profile');
+const freddySocialLinks = document.getElementById('freddy-social-links');
+const freddyDesc = document.querySelector('#freddy-profile .description');
+
+if (freddyProfile && freddySocialLinks && freddyDesc) {
+  freddyProfile.addEventListener('mouseenter', () => {
+    freddySocialLinks.classList.remove('hidden');
+    freddyDesc.classList.remove('hidden');
+  });
+  freddyProfile.addEventListener('mouseleave', () => {
+    freddySocialLinks.classList.add('hidden');
+    freddyDesc.classList.add('hidden');
+  });
+  freddyProfile.addEventListener('click', () => {
+    freddySocialLinks.classList.toggle('hidden');
+    freddyDesc.classList.toggle('hidden');
+  });
+}
+
+// Add hover and click listeners for Emma's profile
+const emmaProfile = document.getElementById('emma-profile');
+const emmaSocialLinks = document.getElementById('emma-social-links');
+const emmaDesc = document.querySelector('#emma-profile .description');
+
+if (emmaProfile && emmaSocialLinks && emmaDesc) {
+  emmaProfile.addEventListener('mouseenter', () => {
+    emmaSocialLinks.classList.remove('hidden');
+    emmaDesc.classList.remove('hidden');
+  });
+  emmaProfile.addEventListener('mouseleave', () => {
+    emmaSocialLinks.classList.add('hidden');
+    emmaDesc.classList.add('hidden');
+  });
+  emmaProfile.addEventListener('click', () => {
+    emmaSocialLinks.classList.toggle('hidden');
+    emmaDesc.classList.toggle('hidden');
+  });
+}
+
+// Add hover and click listeners for Monica's profile
+const monicaProfile = document.getElementById('monica-profile');
+const monicaSocialLinks = document.getElementById('monica-social-links');
+const monicaDesc = document.querySelector('#monica-profile .description');
+
+if (monicaProfile && monicaSocialLinks && monicaDesc) {
+  monicaProfile.addEventListener('mouseenter', () => {
+    monicaSocialLinks.classList.remove('hidden');
+    monicaDesc.classList.remove('hidden');
+  });
+  monicaProfile.addEventListener('mouseleave', () => {
+    monicaSocialLinks.classList.add('hidden');
+    monicaDesc.classList.add('hidden');
+  });
+  monicaProfile.addEventListener('click', () => {
+    monicaSocialLinks.classList.toggle('hidden');
+    monicaDesc.classList.toggle('hidden');
+  });
+}
 
 document.querySelectorAll('section > h3, section > h4, section > h5').forEach(header => {
   header.style.cursor = 'pointer';
